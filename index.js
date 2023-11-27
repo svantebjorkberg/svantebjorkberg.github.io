@@ -1,5 +1,5 @@
-import { React } from "react";
-import { ReactDOM } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "*./styles.css";
 
 const Eyes = ({x, y, onClick}) => (
@@ -25,6 +25,13 @@ const Ghost = ({x, y, colour, onClick}) => (
     </g>
 );
 
+const RedGhost = () => (
+    <g >
+        <TheGhost x='100' y='100' colour='red'/>
+        <Eyes x='100' y='100'/>
+    </g>
+);
+
 export default function App() {
     return (
         <div className="App">
@@ -37,4 +44,5 @@ export default function App() {
 }
 
 const container = document.getElementById("root");
-const root = ReactDOM.create(container);
+const root = ReactDOM.createRoot(container);
+root.render(<RedGhost />);

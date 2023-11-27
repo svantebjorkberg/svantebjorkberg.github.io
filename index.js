@@ -1,4 +1,5 @@
 import { React } from "react";
+import { ReactDOM } from "react-dom/client";
 import "*./styles.css";
 
 const Eyes = ({x, y, onClick}) => (
@@ -34,3 +35,6 @@ export default function App() {
         </div>
     )
 }
+
+const container = document.getElementById("root");
+const root = ReactDOM.create(container);
